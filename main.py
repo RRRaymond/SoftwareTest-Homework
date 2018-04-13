@@ -73,7 +73,8 @@ class Application(Frame):
         for i in range(len-1):
             cmd += ' ' + str(testcase[i])
         result = os.popen(cmd)
-        if int(result.read()) == testcase[len-1]:
+        answer = result.read()[:-1]
+        if answer == str(testcase[len-1]):
             return True
         return False
 
